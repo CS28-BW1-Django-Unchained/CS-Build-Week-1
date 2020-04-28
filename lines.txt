@@ -1,0 +1,7 @@
+pipenv shell
+pipenv install
+
+
+heroku create my-django-app-54
+heroku addons:create heroku-postgresql:hobby-dev
+heroku config:set ALLOWED_HOSTS=.herokuapp.com DEBUG=False SECRET_KEY='this is a sentence'
