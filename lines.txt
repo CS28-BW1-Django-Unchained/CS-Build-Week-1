@@ -135,3 +135,22 @@ Overlook\", \"description\": \"A steep cliff appears before you, falling\\ninto 
 
     }]
 }
+
+
+
+workflow:
+only do this if the migrations are changed
+Run database migrations
+heroku run python manage.py makemigrations
+heroku run python manage.py migrate
+
+
+
+Add rooms to your database
+heroku run python manage.py shell
+Copy/paste the contents of util/create_world.py into the Python interpreter
+Exit the interpreter
+run curl commands
+
+Run the server
+./manage.py runserver
