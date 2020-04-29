@@ -64,7 +64,7 @@ def move(request):
 
 
 
-@scrf_exempt
+@csrf_exempt
 @api_view(["GET"])
 def rooms(request):
     
@@ -75,7 +75,7 @@ def rooms(request):
 
 
 
-@scrf_exempt
+@csrf_exempt
 @api_view(["POST"])
 # PUSHER PUSH IT REAL GOOD
 def say(request):
