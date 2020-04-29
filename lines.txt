@@ -5,3 +5,38 @@ pipenv install
 heroku create my-django-app-54
 heroku addons:create heroku-postgresql:hobby-dev
 heroku config:set ALLOWED_HOSTS=.herokuapp.com DEBUG=False SECRET_KEY='this is a sentence'
+
+git add .
+git commit -m "Setting up heroku"
+git push heroku master
+
+
+
+
+python manage.py createsuperuser
+heroku
+u46279
+david@me.com
+6h75645f4
+
+
+localhost
+david
+david@me.com
+6h75645f4
+
+
+django.db.utils.OperationalError: no such table: adventure_player
+adventure_player doesn't exist
+python manage.py showmigrations
+python manage.py migrate
+python manage.py runserver
+
+
+
+python manage.py makemigrations
+python manage.py migrate
+
+heroku run python manage.py
+
+curl -X POST -H "Content-Type: application/json" -d '{"username": "admin", "password": "this is a sentence"}' http://127.0.0.1:8000/api-token-auth/
