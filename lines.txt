@@ -15,9 +15,13 @@ git push heroku master
 
 python manage.py createsuperuser
 heroku
-u58862
+u24835
 david@me.com
 6h75645f4
+
+
+Jacob
+5675e44yy
 
 
 
@@ -43,5 +47,12 @@ heroku run python manage.py
 
 git push origin master
 git push heroku master
-
+my-django-app-54.herokuapp.com
 curl -X POST -H "Content-Type: application/json" -d '{"username": "admin", "password": "this is a sentence"}' http://127.0.0.1:8000/api-token-auth/
+
+{"token":"252dfc7b22345a5d54bd7ff85cbc215b9d89488e"}
+
+curl -H 'Authorization: Token 252dfc7b22345a5d54bd7ff85cbc215b9d89488e' http://my-django-app-54.herokuapp.com/api/adv/init
+
+in the postgress database file, there is a table that is migrations. It has a record of
+what migrations were run.  It has an initial migration that has been run so it skips it
