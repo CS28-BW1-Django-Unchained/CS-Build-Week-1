@@ -64,7 +64,7 @@ def move(request):
 
 def get_room_data(room):
 
-    return f'Title:\n{room.title}\nDescription:\n{room.description}\nDirections:\n{room.n_to} {room.s_to} {room.e_to} {room.w_to}'
+    return f'PK:{room.pk}\nTitle:\n{room.title}\nDescription:\n{room.description}\nDirections:\n{room.n_to} {room.s_to} {room.e_to} {room.w_to}'
 
 
 @csrf_exempt
