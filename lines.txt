@@ -15,9 +15,10 @@ git push heroku master
 
 python manage.py createsuperuser
 heroku
-u46279
+u58862
 david@me.com
 6h75645f4
+
 
 
 localhost
@@ -38,5 +39,9 @@ python manage.py makemigrations
 python manage.py migrate
 
 heroku run python manage.py
+
+
+git push origin master
+git push heroku master
 
 curl -X POST -H "Content-Type: application/json" -d '{"username": "admin", "password": "this is a sentence"}' http://127.0.0.1:8000/api-token-auth/
