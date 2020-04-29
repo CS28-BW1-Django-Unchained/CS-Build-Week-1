@@ -69,6 +69,7 @@ def move(request):
 def rooms(request):
     
     x = Room.objects.all()
+    print("Our rooms", x)
     # for getting rooms
     # have to get the rooms(from the request?)
     return JsonResponse({'rooms': x}, safe=True)
