@@ -62,6 +62,9 @@ def move(request):
         players = room.playerNames(player_id)
         return JsonResponse({'name':player.user.username, 'title':room.title, 'description':room.description, 'players':players, 'error_msg':"You cannot move that way."}, safe=True)
 
+def print_room(room):
+
+    return f'Title:\n{room.title}\nDescription:\n{room.description}\nDirections:\n{room.n_to} {room.s_to} {room.e_to} {room.w_to}'
 
 
 @csrf_exempt
@@ -69,7 +72,8 @@ def move(request):
 def rooms(request):
     
     x = Room.objects.all()
-    print("Our rooms", x)
+    # print("Our rooms", x)
+    [print_room(room) for room in Room.objects.all()]
     # for getting rooms
     # have to get the rooms(from the request?)
     return JsonResponse({'rooms': x}, safe=True)
