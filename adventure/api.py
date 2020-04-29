@@ -66,17 +66,47 @@ def get_room_data(room):
 
     return f'PK:{room.pk}\nTitle:\n{room.title}\nDescription:\n{room.description}\nDirections:\n{room.n_to} {room.s_to} {room.e_to} {room.w_to}'
 
+'''
+{
+    "rooms": [{
+        pk: 1
+        fields: {
+            title: "Outside Cave Entrance"
+            description: "North of you, the cave mount beckons"
+            n_to: 2
+            s_to: 0
+            e_to: 0
+            w_to: 0
+        }
+    },
+    {
+        
+    }]
+}
+'''
 
+def make_room_dict(room):
+    return {
+        'pk': room.pk,
+        'fields': {
+            'title': room.title,
+            'description': room.description,
+            'n_to': room.n_to,
+            's_to': room.s_to,
+            'e_to': room.e_to,
+            'w_to': room.w_to
+        }
+    }
 @csrf_exempt
 @api_view(["GET"])
 def rooms(request):
     
-    x = Room.objects.all()
+    # x = Room.objects.all()
     # print("Our rooms", x)
-    [print(get_room_data(room)) for room in Room.objects.all()]
+    my_rooms = [make_room_dict(room) for room in Room.objects.all()]
     # for getting rooms
     # have to get the rooms(from the request?)
-    return JsonResponse({'rooms': x}, safe=True)
+    return JsonResponse({'rooms': json.dumps(my_rooms)}, safe=True)
 
 
 
