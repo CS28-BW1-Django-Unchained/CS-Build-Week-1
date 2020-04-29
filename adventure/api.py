@@ -75,6 +75,7 @@ def rooms(request):
 
 
 
+# eggs
 @csrf_exempt
 @api_view(["POST"])
 # PUSHER PUSH IT REAL GOOD
