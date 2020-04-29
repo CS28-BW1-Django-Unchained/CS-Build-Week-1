@@ -1,4 +1,4 @@
-rofrom django.shortcuts import render
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 # from pusher import Pusher
 from django.http import JsonResponse
@@ -75,7 +75,6 @@ def rooms(request):
 
 
 
-# eggs
 @csrf_exempt
 @api_view(["POST"])
 # PUSHER PUSH IT REAL GOOD
