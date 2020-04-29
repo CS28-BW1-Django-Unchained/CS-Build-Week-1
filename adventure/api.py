@@ -75,7 +75,7 @@ def rooms(request):
 
 
 
-@csrf_exempt
+@scrf_exempt
 @api_view(["POST"])
 # PUSHER PUSH IT REAL GOOD
 def say(request):
