@@ -89,12 +89,18 @@ WSGI_APPLICATION = 'adv_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# python terenary
+# x if condition else y
+# print(len(config('DATABASE_URL')))
 DATABASES = {
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
+    # for local computer
+    # django-heroku takes the postgres://ltkrnzrrqncita:c1eba3611f840d8bd6855c141d68eff3a4c25e61ff55e16ef8020f449f296aa0
+    # and converts it to below dict
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME'),
