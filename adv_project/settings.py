@@ -93,21 +93,8 @@ WSGI_APPLICATION = 'adv_project.wsgi.application'
 # x if condition else y
 # print(len(config('DATABASE_URL')))
 DATABASES = {
-
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    # for local computer
-    # django-heroku takes the postgres://ltkrnzrrqncita:c1eba3611f840d8bd6855c141d68eff3a4c25e61ff55e16ef8020f449f296aa0
-    # and converts it to below dict
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('PORT'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2'
     }
 }
 
@@ -163,6 +150,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+ALLOWED_HOSTS = ['*']
+
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'))
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+try:
+    from local_settings import DATABASE_URL, DEBUG, TEMPLATE_DEBUG
+except Exception as e:
+    pass
 
 import django_heroku
 django_heroku.settings(locals())
+
+
+
