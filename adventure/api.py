@@ -1,4 +1,4 @@
-from django.shortcuts import render
+rofrom django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 # from pusher import Pusher
 from django.http import JsonResponse
@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from .models import *
 from rest_framework.decorators import api_view
 import json
+from adventure.models import Player, Room
+
 
 # instantiate pusher
 # pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config('PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
@@ -61,8 +63,21 @@ def move(request):
         return JsonResponse({'name':player.user.username, 'title':room.title, 'description':room.description, 'players':players, 'error_msg':"You cannot move that way."}, safe=True)
 
 
+
+@scrf_exempt
+@api_view(["GET"])
+def rooms(request):
+    
+    x = Room.objects.all()
+    # for getting rooms
+    # have to get the rooms(from the request?)
+    return JsonResponse({'rooms': x}, safe=True)
+
+
+
 @csrf_exempt
 @api_view(["POST"])
+# PUSHER PUSH IT REAL GOOD
 def say(request):
     # IMPLEMENT
     return JsonResponse({'error':"Not yet implemented"}, safe=True, status=500)

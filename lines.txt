@@ -92,7 +92,27 @@ then run the curl commands
 curl -X POST -H "Content-Type: application/json" -d '{"username":"testuser", "password1":"testpassword", "password2":"testpassword"}' http://my-django-app-54.herokuapp.com/api/registration/
 {"key":"d34f8a451b47a45157ca9c028a757addbbec9a31"}
 
+login:
+curl -X POST -H "Content-Type: application/json" -d '{"username":"testuser", "password":"testpassword"}' http://my-django-app-54.herokuapp.com/api/login/
 
 curl -X GET -H 'Authorization: Token d34f8a451b47a45157ca9c028a757addbbec9a31' http://my-django-app-54.herokuapp.com/api/adv/init/
 
 curl -X POST -H 'Authorization: Token d34f8a451b47a45157ca9c028a757addbbec9a31' -H "Content-Type: application/json" -d '{"direction":"n"}' http://my-django-app-54.herokuapp.com/api/adv/move/
+
+test server django-unchained-frontend-bryanadams.django-unchained.now.sh
+deployed frontend users:
+david567
+spicy65b5ve674564w
+
+BRYANS spicy onions----------
+spicyOnionEater
+
+HELLO SPICY david567
+
+WHAT TO DO NEXT:
+curl -X GET -H 'Authorization: Token cc504e88ef659843b858d61c101ca9d4f0edf979' http://lambda-mud-test.herokuapp.com/api/adv/rooms/
+
+EXPECTED RESPONSE:
+{
+    "rooms": "[{\"model\": \"adventure.room\", \"pk\": 1, \"fields\": {\"title\": \"Outside Cave Entrance\", \"description\": \"North of you, the cave mount beckons\", \"n_to\": 2, \"s_to\": 0, \"e_to\": 0, \"w_to\": 0}}, {\"model\": \"adventure.room\", \"pk\": 3, \"fields\": {\"title\": \"Grand Overlook\", \"description\": \"A steep cliff appears before you, falling\\ninto the darkness. Ahead to the north, a light flickers in\\nthe distance, but there is no way across the chasm.\", \"n_to\": 0, \"s_to\": 2, \"e_to\": 0, \"w_to\": 0}}, {\"model\": \"adventure.room\", \"pk\": 2, \"fields\": {\"title\": \"Foyer\", \"description\": \"Dim light filters in from the south. Dusty\\npassages run north and east.\", \"n_to\": 3, \"s_to\": 1, \"e_to\": 4, \"w_to\": 0}}, {\"model\": \"adventure.room\", \"pk\": 4, \"fields\": {\"title\": \"Narrow Passage\", \"description\": \"The narrow passage bends here from west\\nto north. The smell of gold permeates the air.\", \"n_to\": 5, \"s_to\": 0, \"e_to\": 0, \"w_to\": 2}}, {\"model\": \"adventure.room\", \"pk\": 5, \"fields\": {\"title\": \"Treasure Chamber\", \"description\": \"You've found the long-lost treasure\\nchamber! Sadly, it has already been completely emptied by\\nearlier adventurers. The only exit is to the south.\", \"n_to\": 0, \"s_to\": 4, \"e_to\": 0, \"w_to\": 0}}]"
+}
