@@ -15,7 +15,7 @@ git push heroku master
 
 python manage.py createsuperuser
 heroku
-u24835
+u58260
 david@me.com
 6h75645f4
 
@@ -56,3 +56,32 @@ curl -H 'Authorization: Token 252dfc7b22345a5d54bd7ff85cbc215b9d89488e' http://m
 
 in the postgress database file, there is a table that is migrations. It has a record of
 what migrations were run.  It has an initial migration that has been run so it skips it
+
+jacob got it working with clean sql tables
+he could login and see the data for a room
+
+change password?
+    port = int(port, 10)
+ValueError: invalid literal for int() with base 10: ';'
+
+wipe out database at postgress locally(use heroku if I can't do it locally)
+run this:
+Run database migrations
+./manage.py makemigrations
+./manage.py migrate
+Add rooms to your database
+./manage.py shell
+Copy/paste the contents of util/create_world.py into the Python interpreter
+Exit the interpreter
+Run the server
+./manage.py runserver
+
+then run the curl commands
+
+curl -X POST -H "Content-Type: application/json" -d '{"username":"testuser", "password1":"testpassword", "password2":"testpassword"}' http://my-django-app-54.herokuapp.com/api/registration/
+{"key":"d34f8a451b47a45157ca9c028a757addbbec9a31"}
+
+
+curl -X GET -H 'Authorization: Token d34f8a451b47a45157ca9c028a757addbbec9a31' http://my-django-app-54.herokuapp.com/api/adv/init/
+
+curl -X POST -H 'Authorization: Token d34f8a451b47a45157ca9c028a757addbbec9a31' -H "Content-Type: application/json" -d '{"direction":"n"}' http://my-django-app-54.herokuapp.com/api/adv/move/
