@@ -76,6 +76,17 @@ Exit the interpreter
 Run the server
 ./manage.py runserver
 
+
+
+heroku
+may need to reset database
+
+heroku run python manage.py makemigrations
+heroku run python manage.py migrate
+heroku run python manage.py shell
+copy paste from utils game
+
+
 then run the curl commands
 
 curl -X POST -H "Content-Type: application/json" -d '{"username":"testuser", "password1":"testpassword", "password2":"testpassword"}' http://my-django-app-54.herokuapp.com/api/registration/
