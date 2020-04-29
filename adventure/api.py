@@ -87,6 +87,7 @@ def get_room_data(room):
 
 def make_room_dict(room):
     return {
+        'models': 'adventure.models',
         'pk': room.pk,
         'fields': {
             'title': room.title,
