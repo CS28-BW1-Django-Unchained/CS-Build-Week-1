@@ -3,7 +3,7 @@ from adventure.models import Player, Room
 from faker import Faker
 import random
 
-Room.objects.all().truncate()
+Room.objects.all().delete()
 my_fake = Faker()
 
 my_rooms = []
