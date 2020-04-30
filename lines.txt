@@ -6,6 +6,10 @@ heroku create my-django-app-54
 heroku addons:create heroku-postgresql:hobby-dev
 heroku config:set ALLOWED_HOSTS=.herokuapp.com DEBUG=False SECRET_KEY='this is a sentence'
 
+changes regularly
+postgres://xdkxoxhcxsptox:8b53e31c3cd23da4f02250a9bb8703cc6270721304ad59f322af9a5895d607ad@ec2-34-234-228-127.compute-1.amazonaws.com:5432/d3356ilr54hc33
+
+
 git add .
 git commit -m "Setting up heroku"
 git push heroku master
@@ -25,7 +29,7 @@ Jacob
 
 
 
-localhost
+localhost(using heroku database)
 david
 david@me.com
 6h75645f4
@@ -38,9 +42,14 @@ python manage.py migrate
 python manage.py runserver
 
 
-
+because I'm connected to heroku database these will affect it
 python manage.py makemigrations
 python manage.py migrate
+python manage.py shell
+copy and pase create world file into the shell
+
+
+
 
 heroku run python manage.py
 
@@ -154,3 +163,7 @@ run curl commands
 
 Run the server
 ./manage.py runserver
+
+
+workflow for new backend:
+Ask For Help when stuck. Don't spend all day researching the internet.
